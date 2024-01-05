@@ -8,11 +8,38 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5em;
+    overflow: hidden;
+    height: 100vh;
 }
 .game{
-    background-color: grey;
+    padding: 5px;
+    border-radius: 1em;
+    background-color: aliceblue;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
+.game.start .hand1{
+    animation: shake1 .7s ease infinite;
+}
+@keyframes shake1 {
+    50%{
+        transform: translateY(10px);
+    }
+}
+.game.start .hand2{
+    animation: shake2 .7s ease infinite;
+}
+@keyframes shake2 {
+    50%{
+        transform: translateY(10px);
+    }
+}
+.game h1{
+    color: #f781db;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 600;
+}
+
 .cpu .cpu-image{
     display: flex;
     align-items: center;
@@ -21,7 +48,61 @@ body{
 }
 .hand1 img{
     width: 15em;
+    transform: rotate(90deg) rotateY(180deg);
 }
 .hand2 img{
     width: 15em;
+    transform: rotate(-90deg);
+}
+.user .user-image{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 2em;
+}
+.game.start .user-image{
+    pointer-events: none;
+}
+.hand-stone ,
+.hand-scissors ,
+.hand-paper {
+    opacity: .6;
+    transition: opacity .3s ease;
+    cursor: pointer;
+}
+.hand-stone:hover ,
+.hand-scissors:hover ,
+.hand-paper:hover{
+    opacity: 1;
+} 
+.hand-stone img,
+.hand-scissors img,
+.hand-paper img{
+    width: 10em;
+    filter: drop-shadow(0 5px 10px rgba(100, 162, 216, 0.863));
+    
+}
+.hand-stone p{
+    color: #f781db;
+    font-size: 2em;
+    font-weight: 700;
+}
+.hand-paper p{
+    color: #4babe9;
+    font-size: 2em;
+    font-weight: 700;
+}
+.hand-scissors p{
+    color: #f6da55;
+    font-size: 2em;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+@media (max-width:562px) {
+    .game h1{
+        font-size: 2.5em;
+        font-weight: 600;
+    }
 }
