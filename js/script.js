@@ -204,6 +204,7 @@ function displaySummaryTable() {
     restartButton.style.color = 'aliceblue';
     restartButton.style.backgroundColor = 'black';
     restartButton.style.padding = '0 3em';
+    restartButton.style.zIndex = '100000';
     restartButton.textContent = 'Restart';
     restartButton.onclick = run;
 
@@ -211,15 +212,7 @@ function displaySummaryTable() {
     gameover.appendChild(table);
     gameover.appendChild(restartButton);
     head.style.display="none";
-
-    if(userScore>cpuScore){
-        youwin.style.opacity="1";
-    }else if(userScore==cpuScore){
-        drawwin.style.opacity="1";
-    }else{
-        chadwin.style.opacity="1";
-    }
-
+    anim.style.display="block";
 }
 
 function run() {

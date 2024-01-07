@@ -12,7 +12,7 @@ body{
     overflow: hidden;
     height: 100vh;
     width: 100vw;
-    background:url("../images/gggrain.svg"),rgba(0, 0, 0, 0.2);
+    background:rgba(0, 0, 0, 1);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -45,7 +45,7 @@ body{
     }
 }
 .game h1{
-    color: #f781db;
+    color: white;
     text-align: center;
     font-size: 3em;
     font-weight: 600;
@@ -155,7 +155,7 @@ body{
   .draw-win,
   .chad-win,
   .you-win{
-    color: #f781db;
+    color: white;
     font-size: 4em;
     position: absolute;
     top: 2em;
@@ -169,7 +169,7 @@ body{
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 100;
+    z-index: -10;
     display: none;
   }
   .container{
