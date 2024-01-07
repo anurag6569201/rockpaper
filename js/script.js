@@ -93,7 +93,7 @@ optionhand.forEach((image, index) => {
         result.textContent = "Wait..."
         game.classList.add("start");
 
-        let cpuhand = ["images/stone.png", "images/paper.png", "images/scissors.png"];
+        let cpuhand = ["images/rock.png", "images/paper.png", "images/scissor.png"];
         let currentIndex = 0;
 
         let intervalId = setInterval(() => {
@@ -128,7 +128,7 @@ optionhand.forEach((image, index) => {
                 rockscissor: "Chad",
                 scissorpaper: "Chad",
                 scissorrock: "You",
-                scissorscissor: "Draw",
+                scissorcissor: "Draw",
             }
             let outcomevalue = outcome[cpuvalue + uservalue];
             result.textContent = uservalue === cpuvalue ? "Match Draw 😁" : `${outcomevalue} Won 😎!!`;
@@ -195,8 +195,8 @@ function displaySummaryTable() {
     summary.forEach((round) => {
         let row = tbody.insertRow();
         row.insertCell(0).textContent = round.round;
-        row.insertCell(1).textContent = round.userMove;
-        row.insertCell(2).textContent = round.cpuMove;
+        row.insertCell(1).innerHTML = `<img style="width:50px;" src="images/${round.userMove}.png" alt="${round.userMove}" />`;
+        row.insertCell(2).innerHTML = `<img style="width:50px;" src="images/${round.cpuMove}.png" alt="${round.cpuMove}" />`;
         row.insertCell(3).textContent = round.result;
     });
 
